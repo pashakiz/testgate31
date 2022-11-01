@@ -6,7 +6,6 @@ let allData;
 export const getData = () => {
   withDelay(DELAY)
     .then(fetchData)
-    //.then(prepareData)
     .then((data) => {
       allData = data;
     });
@@ -29,12 +28,4 @@ const fetchData = () => (
   fetch(URL)
     .then(res => res.json())
     .then(data => data)
-);
-
-const prepareData = (obj) => (
-  Object.entries(obj)
-    .reduce((res, [type, data]) => {
-      res[type] = normalizeData(type, data);
-      return res;
-    }, {})
 );
