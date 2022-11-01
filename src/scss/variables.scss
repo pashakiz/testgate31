@@ -1,3 +1,19 @@
-$container-xxl:             1380px;
-$container-xxxl:            1640px;
-.var {color: black}
+// colors
+$color_dark:          #3d3d3d;
+$color_dark2:         #B2B7BF;
+$color_light:         #ffffff;
+$color_light2:        #E3E6EC;
+$color_green:         #7EBC3C;
+$color_footer:        #5f6770;
+
+// body
+$font_family:         'Roboto', Arial, sans-serif;
+$font_weight:         400;
+$font_size:           14px;
+$line_height:         1.37;
+$font_color:          $color_dark;
+$body_bg_color:       $color_light;
+
+// .sticky-footer
+$body_mb:             30px;
+$footer_height:       70px;
