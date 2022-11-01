@@ -1,6 +1,6 @@
-# webpack
+# testGATE31
 
-Init files for new project
+See in browser: <a href="https://github.com/pashakiz/testgate31/dist" title="demo">https://github.com/pashakiz/testgate31/dist</a>
 
 ## npm
 
