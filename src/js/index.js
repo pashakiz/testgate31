@@ -2,9 +2,9 @@ import '@scss/main.scss'
 import itemTemplate from './itemTemplate';
 import { getData } from './data';
 
-const dashboard = document.querySelector("#dashboard");
-const searchForm = document.querySelector("#search-form");
-const searchInput = document.querySelector("#search-input");
+const dashboard = document.querySelector('#dashboard');
+const searchForm = document.querySelector('#search-form');
+const searchInput = document.querySelector('#search-input');
 const searchMessage = location.href.split('?search=')[1] ? location.href.split('?search=')[1] : '';
 
 //render
@@ -16,6 +16,7 @@ async function renderItems() {
   items.forEach(el => {
     dashboard.innerHTML += el;
   });
+  checkItems();
 }
 
 document.addEventListener('DOMContentLoaded', renderItems);
@@ -51,11 +52,23 @@ const handleClickItem = (event) => {
   let item = event.target.closest('.item');
   let checkbox = item.querySelector('.item__check');
 
-  if (!event.target.classList.contains('item__check'))
-    checkbox.click();
+  if (checkbox.checked) {
+    item.classList.add('item_checked');
+    sessionStorage.setItem(checkbox.id, true);
+    return false
+  }
 
-  checkbox.checked ? item.classList.add('item_checked') : item.classList.remove('item_checked');
+  item.classList.remove('item_checked');
+  sessionStorage.removeItem(checkbox.id);
+}
+
+const checkItems = () => {
+  dashboard.querySelectorAll('.item__check').forEach(el => {
+    if (!!sessionStorage.getItem(el.id)) {
+      el.checked = true;
+      el.closest('.item').classList.add('item_checked');
+    }
+  });
 }
 
 dashboard.addEventListener('click', handleClickItem);
-
