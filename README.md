@@ -1,6 +1,6 @@
 # testGATE31
 
-See in browser: <a href="https://github.com/pashakiz/testgate31/dist" title="demo">https://github.com/pashakiz/testgate31/dist</a>
+See in browser: <a href="https://pashakiz.github.io/testgate31/dist/" title="demo">https://pashakiz.github.io/testgate31/dist/</a>
 
 ## npm
 
